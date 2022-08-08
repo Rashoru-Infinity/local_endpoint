@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  budget:
+    image: rashoru/local_endpoint:1.0
+    ports:
+      - "80:80"
+    environment:
+      - URL=https://docs.google.com/spreadsheets/d/$(spreadsheet_id)/export?format=pdf&id=$(spreadsheet_id)/
+      - INTERVAL=10s
+      - FILENAME=spreadsheet.pdf
